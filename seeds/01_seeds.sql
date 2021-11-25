@@ -1,0 +1,113 @@
+-- users
+-- INSERT INTO users values (DEFAULT, 'John Smith', 'john.smith@yahoo.com', '$2a$10$FB/BOAVhpuLvpOREQVmvmezD4ED/.JBIDRh70tGevYzYzQgFId2u.');
+-- INSERT INTO users values (DEFAULT, 'Jane Reed', 'jreed98@gmail.com', '$2a$10$FB/BOAVhpuLvpOREQVmvmezD4ED/.JBIDRh70tGevYzYzQgFId2u.');
+-- INSERT INTO users values (DEFAULT, 'Paul Mcartney', 'Pmcartneey@gmail.com', '$2a$10$FB/BOAVhpuLvpOREQVmvmezD4ED/.JBIDRh70tGevYzYzQgFId2u.');
+
+-- -- properties
+-- INSERT INTO properties VALUES (
+--   DEFAULT,
+--   5,
+--   'Abbey Roads Studio',
+--   'description',
+--   'https://dt7v1i9vyp3mf.cloudfront.net/styles/news_large/s3/imagelibrary/S/SF_Nov_05-IWxQDkxduN7bfDM48O2R30TDqBSupc.v.jpg',
+--   'https://i.cbc.ca/1.2120561.1382073572!/httpImage/image.jpg_gen/derivatives/original_780/abbeyroad-cp-getty-96788526.jpg',
+--   500,
+--   10,
+--   2,
+--   3,
+--   'England',
+--   '3 Abbey Rd',
+--   'London',
+--   'Greater London',
+--   'NW8 9AY',
+--   true
+-- );
+
+-- INSERT INTO properties VALUES (
+--   DEFAULT,
+--   4,
+--   'Friar Park',
+--   'description',
+--   'https://upload.wikimedia.org/wikipedia/commons/7/71/Lodge_at_Friar_Park_-_geograph.org.uk_-_1588804.jpg',
+--   'https://i.pinimg.com/originals/98/8d/26/988d26484ad14ffb0015210798f4690f.jpg',
+--   10000,
+--   20,
+--   8,
+--   30,
+--   'England',
+--   '65 Crisp Rd',
+--   'Heathrow',
+--   'Henley-on-Thames',
+--   'RG9 2EN',
+--   true
+-- );
+
+-- INSERT INTO properties VALUES (
+--   DEFAULT,
+--   6,
+--   'Penny Lane',
+--   'description',
+--   'https://live.staticflickr.com/773/22669278148_f844968c0e_b.jpg',
+--   'https://upload.wikimedia.org/wikipedia/commons/2/2a/Pennylane2.jpg',
+--   80,
+--   40,
+--   1,
+--   2,
+--   'England',
+--   '110B Penny Ln',
+--   'Liverpool',
+--   'County of Merseyside',
+--   'L18 1DF',
+--   true
+-- );
+
+-- INSERT INTO reservations VALUES (
+-- DEFAULT,
+-- '2021-11-11',
+-- '2021-11-20',
+-- 4,
+-- 4
+-- );
+
+-- INSERT INTO reservations VALUES (
+-- DEFAULT,
+-- '2021-08-01',
+-- '2021-09-12',
+-- 6,
+-- 6
+-- );
+-- INSERT INTO reservations VALUES (
+-- DEFAULT,
+-- '2021-12-23',
+-- '2022-01-15',
+-- 2,
+-- 5
+-- );
+
+
+-- INSERT INTO property_reviews VALUES (
+-- DEFAULT,
+-- 5,
+-- 4,
+-- 1,
+-- 3,
+-- 'text'
+-- );
+
+-- INSERT INTO property_reviews VALUES (
+-- DEFAULT,
+-- 2,
+-- 4,
+-- 1,
+-- 5,
+-- 'text'
+-- );
+
+-- INSERT INTO property_reviews VALUES (
+-- DEFAULT,
+-- 6,
+-- 4,
+-- 3,
+-- 6,
+-- 'text'
+-- );
