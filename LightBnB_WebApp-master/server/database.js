@@ -109,13 +109,82 @@ exports.getAllReservations = getAllReservations;
  * @param {*} limit The number of results to return.
  * @return {Promise<[{}]>}  A promise to the properties.
  */
+
+
 const getAllProperties = (options, limit = 10) => {
-  return pool
-    .query(`SELECT * FROM properties LIMIT $1`, [limit])
-    .then((result) => result.rows)
+  // 1
+  const queryParams = [];
+  // 2
+  let queryString = `
+    SELECT *
+    FROM properties
+    `;
+  
+  // 3
+  if (options.city) {
+    queryParams.push(`%${options.city}%`);
+    if (queryParams.length === 1) {
+      queryString += 'WHERE ';
+    } else {
+      queryString += 'AND ';
+    }
+    queryString += `city LIKE $${queryParams.length} `;
+  }
+  
+  if (options.owner_id) {
+    queryParams.push(`${options.owner_id}`);
+    if (queryParams.length === 1) {
+      queryString += 'WHERE';
+    } else {
+      queryString += 'AND ';
+    }
+    queryString += `owner_id = $${queryParams.length} `;
+  }
+  
+  if (options.minimum_price_per_night) {
+    queryParams.push(`${options.minimum_price_per_night * 100}`);
+    if (queryParams.length === 1) {
+      console.log('min complete');
+      queryString += 'WHERE';
+    } else {
+      queryString += 'AND ';
+    }
+    queryString += `cost_per_night >= $${queryParams.length} `;
+  }
+  
+  if (options.maximum_price_per_night) {
+    queryParams.push(`${options.maximum_price_per_night * 100}`);
+    if (queryParams.length === 1) {
+      console.log('max complete');
+      queryString += 'WHERE';
+    } else {
+      queryString += 'AND ';
+    }
+    queryString += `cost_per_night <= $${queryParams.length} `;
+  }
+
+
+  // 4
+  queryParams.push(limit);
+  queryString += `
+    GROUP BY properties.id
+    ORDER BY cost_per_night
+    LIMIT $${queryParams.length};
+    `;
+  
+  // 5
+  console.log(queryString, queryParams);
+  
+  // 6
+  return pool.query(queryString, queryParams)
+    .then((res) => {
+      console.log(res.rows);
+      return res.rows;
+    })
     .catch((err) => {
       console.log(err.message);
     });
+
 };
 
 exports.getAllProperties = getAllProperties;
